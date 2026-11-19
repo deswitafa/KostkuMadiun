@@ -1,0 +1,4 @@
+/* Titik masuk CSS bersama. Semua halaman memuat file ini, lalu CSS khusus halamannya. */
+@import url('./base.css');
+@import url('./layout.css');
+@import url('./components.css');

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak - KostKu Madiun</title>
+  <meta name="description" content="Hubungi tim KostKu Madiun via WhatsApp, telepon, atau email, atau hubungi langsung pemilik kos pilihanmu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/pages/info.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><span class="material-symbols-outlined">chevron_right</span><span class="is-current">Kontak</span>
+        </nav>
+        <h1>Hubungi Kami</h1>
+        <p style="margin-top:8px;max-width:680px">Punya pertanyaan seputar kos di Madiun atau ingin mendaftarkan properti kos Anda? Tim KostKu Madiun siap membantu mahasiswa dan perantau dengan ramah dan cepat.</p>
+        <a class="btn btn--wa btn--lg" id="hero-wa" href="#" target="_blank" rel="noopener noreferrer" style="margin-top:24px"><span class="material-symbols-outlined">forum</span>Chat via WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Kontak kos pilihan (diisi dari data kos) -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Hubungi Langsung Kos Pilihanmu</h2>
+          <p>Nomor WhatsApp pemilik atau pengelola tiap kos. Tanyakan ketersediaan kamar dan janjikan survei langsung.</p>
+        </div>
+        <div class="owner-contacts" id="owner-contacts"></div>
+      </div>
+    </section>
+
+    <!-- Saluran resmi & kantor -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section__head"><h2>Saluran Informasi &amp; Kantor Resmi</h2></div>
+        <div class="contact-grid">
+          <article class="card contact-card">
+            <h3>Pusat Layanan KostKu Madiun</h3>
+            <ul class="contact-list">
+              <li><span class="material-symbols-outlined">chat</span><div><strong>WhatsApp Resmi</strong><span id="info-wa"></span><br><span>Rekomendasi kos terdekat, survei lokasi, dan bantuan pencarian.</span></div></li>
+              <li><span class="material-symbols-outlined">call</span><div><strong>Telepon Kantor</strong><span id="info-telepon"></span><br><span>Informasi kemitraan dan klarifikasi data kos pada jam kerja.</span></div></li>
+              <li><span class="material-symbols-outlined">mail</span><div><strong>Email Resmi</strong><a id="info-email" href="#"></a><br><span>Kerja sama instansi, kampus, organisasi, dan verifikasi pemilik kos.</span></div></li>
+            </ul>
+            <a class="btn btn--wa btn--sm" id="info-wa-btn" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">chat</span>Kirim Pesan WhatsApp</a>
+          </article>
+
+          <article class="card contact-card">
+            <h3>Kantor &amp; Jam Layanan</h3>
+            <ul class="contact-list">
+              <li><span class="material-symbols-outlined">location_on</span><div><strong>Alamat Kantor / Sekretariat</strong><span id="info-alamat"></span><br><span>Titik kumpul konsultasi tatap muka dan verifikasi surat izin usaha kos. 5 menit ke UNIPMA &amp; Poltek Madiun.</span></div></li>
+              <li><span class="material-symbols-outlined">schedule</span><div><strong>Jam Layanan (WIB)</strong>Senin – Sabtu: 08.00 – 20.00<br>Minggu: 09.00 – 17.00</div></li>
+            </ul>
+            <a class="btn btn--ghost btn--sm" id="info-maps" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">map</span>Lihat di Google Maps</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catatan -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><h2>Catatan Penting Calon Penghuni &amp; Pemilik Kos</h2></div>
+        <div class="grid grid--3">
+          <article class="card card--mint contact-card"><div class="icon-tile"><span class="material-symbols-outlined">check_circle</span></div><h3>Tanpa Biaya Admin</h3><p>100% gratis untuk pencari kos. Anda bebas berkonsultasi dan mendapatkan nomor pemilik tanpa potongan apa pun.</p></article>
+          <article class="card card--blue contact-card"><div class="icon-tile"><span class="material-symbols-outlined">handshake</span></div><h3>Survei Langsung</h3><p>Janjian survei langsung dengan pemilik via WhatsApp tanpa perantara agar bisa melihat fasilitas kamar dengan jelas.</p></article>
+          <article class="card card--cream contact-card"><div class="icon-tile"><span class="material-symbols-outlined">domain_add</span></div><h3>Pendaftaran Kos</h3><p>Daftarkan kamar kos Anda lewat halaman <a href="pemilik.html"><strong>Untuk Pemilik</strong></a> atau chat WhatsApp admin.</p></article>
+        </div>
+        <p style="margin-top:24px;text-align:center">Punya pertanyaan umum soal pencarian dan pembayaran sewa? <a href="faq.html"><strong>Lihat FAQ</strong></a></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="src/pages/kontak.js"></script>
+</body>
+</html>

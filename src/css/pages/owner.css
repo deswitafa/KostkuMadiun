@@ -1,0 +1,81 @@
+/* owner.css - halaman pemilik: Untuk Pemilik, Dasbor, Tambah Kos */
+
+/* ---------- Untuk Pemilik ---------- */
+.owner-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start; }
+.owner-hero__text { display: grid; gap: 18px; justify-items: start; padding-top: 12px; }
+.owner-hero__text h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); }
+.owner-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.eyebrow { display: block; margin-bottom: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sky-dark); }
+.form-card { display: grid; gap: 16px; padding: 28px; box-shadow: var(--shadow-lg); }
+.form-card h2 { font-size: 1.3rem; }
+.field em { font-weight: 400; font-style: normal; color: var(--muted-2); }
+.step-card { position: relative; display: grid; gap: 10px; align-content: start; padding: 24px; }
+.step-card__no { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); color: #fff; font-weight: 800; }
+.step-card h3 { font-size: 1.05rem; }
+.step-card p { font-size: 0.85rem; }
+.step-card .chip { justify-self: start; }
+.faq-list { display: grid; gap: 12px; }
+.contact-card { display: grid; gap: 12px; align-content: start; padding: 24px; }
+.contact-card h3 { font-size: 1.05rem; }
+.contact-card p { font-size: 0.88rem; }
+
+/* ---------- Layout dasbor & tambah kos ---------- */
+.dash { padding-block: 32px 0; }
+.dash__head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.dash__head h1 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.demo-note { display: flex; gap: 10px; align-items: center; margin-bottom: 24px; padding: 12px 16px; border: 1px solid #ffe8b2; border-radius: var(--radius-sm); background: #fff9e8; font-size: 0.82rem; }
+.demo-note .material-symbols-outlined { color: var(--warn); }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+.stat-tile { display: flex; align-items: center; gap: 14px; padding: 20px; }
+.stat-tile strong { display: block; font-size: 1.8rem; line-height: 1.1; color: var(--navy); }
+.stat-tile span.l { font-size: 0.78rem; }
+.dash__layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start; }
+.dash__list { display: grid; gap: 18px; }
+.dash__side { display: grid; gap: 18px; }
+
+.own-card { display: grid; gap: 16px; padding: 24px; }
+.own-card__top { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.own-card h3 { font-size: 1.2rem; }
+.own-card__addr { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; }
+.own-card__addr .material-symbols-outlined { font-size: 18px; color: var(--sky); }
+.own-card__price { display: flex; flex-wrap: wrap; gap: 6px 14px; font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+.own-card__price small { font-weight: 500; color: var(--muted); }
+.own-card__rooms { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: var(--radius-sm); background: #f1f3ff; }
+.own-card__rooms strong { display: block; font-size: 0.85rem; color: var(--navy); }
+.own-card__rooms small { font-size: 0.72rem; }
+.stepper { display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 999px; background: #fff; box-shadow: var(--shadow); }
+.stepper button { width: 34px; height: 34px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--sky-soft); color: var(--sky-dark); }
+.stepper button:hover { background: #dde9ff; }
+.stepper output { min-width: 84px; text-align: center; font-weight: 800; color: var(--navy); }
+.own-card__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.progress { height: 10px; overflow: hidden; border-radius: 999px; background: #e8eef8; }
+.progress i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--sky), var(--wa)); }
+.checklist { display: grid; gap: 10px; list-style: none; padding: 0; font-size: 0.85rem; }
+.checklist li { display: flex; align-items: center; gap: 8px; }
+.checklist .material-symbols-outlined { font-size: 18px; color: var(--ok); }
+.checklist .is-pending .material-symbols-outlined { color: var(--warn); }
+
+/* ---------- Form tambah kos ---------- */
+.add-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: start; }
+.form-section { display: grid; gap: 18px; padding: 28px; margin-bottom: 20px; }
+.form-section h2 { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; }
+.form-section h2 b { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); color: #fff; font-size: 0.85rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-grid .field--full { grid-column: 1 / -1; }
+.facility-picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.facility-picks .check { padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.preview { position: sticky; top: calc(var(--navbar-h) + 16px); display: grid; gap: 14px; }
+.preview > small { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.form-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.modal__body--center { text-align: center; display: grid; gap: 12px; justify-items: center; }
+
+@media (max-width: 980px) {
+  .owner-hero, .dash__layout, .add-layout { grid-template-columns: 1fr; }
+  .preview { position: static; }
+  .stat-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .stat-grid, .form-grid, .facility-picks { grid-template-columns: 1fr; }
+}
+.icon-lg { font-size: 56px; color: var(--ok); }

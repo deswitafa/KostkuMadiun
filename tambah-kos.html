@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tambah Kos Baru - KostKu Madiun</title>
+  <meta name="description" content="Formulir pendaftaran properti kos baru untuk pemilik kos di Madiun.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/pages/owner.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container dash">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="dasbor.html">Dasbor</a><span class="material-symbols-outlined">chevron_right</span><span class="is-current">Tambah Kos Baru</span>
+    </nav>
+    <div class="dash__head">
+      <div>
+        <h1>Tambah Properti Kos Baru</h1>
+        <p>Lengkapi data kos Anda agar calon penghuni di Madiun mudah menemukannya.</p>
+      </div>
+      <span class="chip chip--status-ok" id="draft-status" hidden>Draft tersimpan di browser ini</span>
+    </div>
+
+    <div class="add-layout">
+      <form id="form-kos" novalidate>
+        <!-- 1 -->
+        <section class="card form-section">
+          <h2><b>1</b>Info Dasar Properti</h2>
+          <label class="field"><span>Nama Kos Lengkap *</span>
+            <input class="input" name="nama" maxlength="60" placeholder="Contoh: Kost Cendana Madiun UNIPMA">
+            <small class="field-hint">Sertakan lokasi atau kampus terdekat agar mudah dicari.</small>
+            <small class="field-error" data-error-for="nama"></small></label>
+          <div class="field"><span>Jenis Peruntukan Penghuni *</span>
+            <div class="pill-group">
+              <label class="pill pill--putri"><input type="radio" name="tipe" value="putri"><span>Putri</span></label>
+              <label class="pill pill--putra"><input type="radio" name="tipe" value="putra"><span>Putra</span></label>
+              <label class="pill pill--campuran"><input type="radio" name="tipe" value="campuran"><span>Campuran</span></label>
+            </div>
+            <small class="field-error" data-error-for="tipe"></small></div>
+          <label class="field"><span>Deskripsi Kos &amp; Lingkungan</span>
+            <textarea class="input" name="deskripsi" rows="4" placeholder="Ceritakan suasana, jarak ke kampus, dan keunggulan kos Anda."></textarea></label>
+        </section>
+
+        <!-- 2 -->
+        <section class="card form-section">
+          <h2><b>2</b>Lokasi &amp; Kontak WhatsApp</h2>
+          <div class="form-grid">
+            <label class="field field--full"><span>Alamat Lengkap Kos *</span>
+              <input class="input" name="alamat" placeholder="Jl. Merpati No. 12, Taman, Kota Madiun">
+              <small class="field-error" data-error-for="alamat"></small></label>
+            <label class="field"><span>Area / Kecamatan *</span>
+              <input class="input" name="area" placeholder="Taman">
+              <small class="field-error" data-error-for="area"></small></label>
+            <label class="field"><span>Tautan Google Maps</span>
+              <input class="input" name="mapsUrl" type="url" placeholder="https://maps.google.com/...">
+              <small class="field-error" data-error-for="mapsUrl"></small></label>
+            <label class="field"><span>Nomor WhatsApp Pengelola *</span>
+              <input class="input" name="whatsapp" inputmode="tel" placeholder="0812xxxxxxxx">
+              <small class="field-hint">Nomor ini menerima pesan dari calon penyewa.</small>
+              <small class="field-error" data-error-for="whatsapp"></small></label>
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section class="card form-section">
+          <h2><b>3</b>Tarif &amp; Jumlah Kamar</h2>
+          <div class="form-grid">
+            <label class="field"><span>Tarif Harian (Rp) <em>opsional</em></span>
+              <input class="input" name="hargaHarian" inputmode="numeric" placeholder="75.000"></label>
+            <label class="field"><span>Tarif Bulanan (Rp) *</span>
+              <input class="input" name="hargaBulanan" inputmode="numeric" placeholder="850.000">
+              <small class="field-error" data-error-for="hargaBulanan"></small></label>
+            <label class="field"><span>Tarif Tahunan (Rp) <em>opsional</em></span>
+              <input class="input" name="hargaTahunan" inputmode="numeric" placeholder="9.000.000">
+              <small class="field-hint" id="hint-hemat"></small></label>
+            <span></span>
+            <label class="field"><span>Total Jumlah Kamar *</span>
+              <input class="input" name="totalKamar" type="number" min="1" value="10">
+              <small class="field-error" data-error-for="totalKamar"></small></label>
+            <label class="field"><span>Sisa Kamar Kosong *</span>
+              <input class="input" name="sisaKamar" type="number" min="0" value="2">
+              <small class="field-error" data-error-for="sisaKamar"></small></label>
+          </div>
+        </section>
+
+        <!-- 4 -->
+        <section class="card form-section">
+          <h2><b>4</b>Fasilitas &amp; Peraturan</h2>
+          <div class="field"><span>Fasilitas yang Tersedia</span>
+            <div class="facility-picks" id="facility-picks"></div></div>
+          <label class="field"><span>Peraturan Kos <em>satu aturan per baris</em></span>
+            <textarea class="input" name="peraturan" rows="4" placeholder="Gerbang ditutup 22.00 WIB&#10;Dilarang merokok di dalam kamar"></textarea></label>
+        </section>
+
+        <!-- 5 -->
+        <section class="card form-section card--cream">
+          <h2><b>5</b>Foto Properti</h2>
+          <p style="font-size:.88rem">Situs ini belum menyimpan unggahan foto. Setelah mengirim formulir, kirim foto (tampak depan, kamar tidur, kamar mandi, dapur, dan parkir) ke admin lewat WhatsApp. Foto terang di siang hari membuat kamar terlihat lapang dan bersih.</p>
+        </section>
+
+        <div class="form-actions">
+          <button class="btn btn--ghost" type="button" id="btn-draft"><span class="material-symbols-outlined">drafts</span>Simpan Draft</button>
+          <button class="btn btn--wa" type="submit"><span class="material-symbols-outlined">send</span>Kirim ke Admin via WhatsApp</button>
+        </div>
+      </form>
+
+      <aside class="preview">
+        <small>Pratinjau Kartu di Pencarian</small>
+        <div id="preview-card"></div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="src/pages/tambah-kos.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untuk Pemilik Kos - KostKu Madiun</title>
+  <meta name="description" content="Daftarkan kos Anda di KostKu Madiun secara gratis tanpa komisi. Calon penghuni langsung menghubungi Anda lewat WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/pages/home.css">
+  <link rel="stylesheet" href="src/css/pages/owner.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <!-- Hero + formulir pendaftaran -->
+    <section class="page-hero">
+      <div class="container owner-hero">
+        <div class="owner-hero__text">
+          <span class="chip chip--status-warn"><span class="material-symbols-outlined">stars</span>100% Gratis Selamanya · Tanpa Potongan Komisi</span>
+          <h1>Punya Kos di Madiun? Gabung Jadi Mitra KostKu, Gratis.</h1>
+          <p>Calon penghuni langsung chat WhatsApp ke Anda tanpa biaya admin. Kos Anda siap dipromosikan ke mahasiswa baru UNIPMA, Poltek Madiun, UNS Caruban, dan perantau muda.</p>
+          <div class="owner-hero__actions">
+            <a class="btn btn--sun btn--lg" href="#daftar"><span class="material-symbols-outlined">add_business</span>Daftarkan Kos Saya</a>
+            <a class="btn btn--ghost btn--lg" href="dasbor.html"><span class="material-symbols-outlined">login</span>Lihat Contoh Dasbor</a>
+          </div>
+        </div>
+
+        <form class="card form-card" id="form-daftar" novalidate>
+          <div>
+            <small class="eyebrow">Pendaftaran Mitra Cepat</small>
+            <h2>Mulai Promosikan Kos Anda</h2>
+            <p style="font-size:.85rem">Isi data singkat, lalu kirim lewat WhatsApp ke admin. Tidak ada data yang disimpan di situs ini.</p>
+          </div>
+          <label class="field"><span>Nama Lengkap Pemilik</span>
+            <input class="input" name="nama" autocomplete="name" required>
+            <small class="field-error" data-error-for="nama"></small></label>
+          <label class="field"><span>Nomor WhatsApp Aktif</span>
+            <input class="input" name="whatsapp" inputmode="tel" placeholder="0812xxxxxxxx" autocomplete="tel" required>
+            <small class="field-hint">Nomor tujuan calon penghuni menghubungi Anda.</small>
+            <small class="field-error" data-error-for="whatsapp"></small></label>
+          <label class="field"><span>Alamat Email <em>(opsional)</em></span>
+            <input class="input" name="email" type="email" autocomplete="email">
+            <small class="field-error" data-error-for="email"></small></label>
+          <label class="field"><span>Nama Kos yang Didaftarkan</span>
+            <input class="input" name="namaKos" required>
+            <small class="field-error" data-error-for="namaKos"></small></label>
+          <label class="check"><input type="checkbox" name="setuju" required><span>Saya setuju data ini dikirim ke admin KostKu Madiun untuk keperluan pendaftaran.</span></label>
+          <small class="field-error" data-error-for="setuju"></small>
+          <button class="btn btn--wa btn--block btn--lg" type="submit"><span class="material-symbols-outlined">chat</span>Kirim via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Alur -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head"><h2>Mudah &amp; Cepat, Hanya 4 Langkah</h2><p>Kos Anda bisa tampil sebelum semester baru dimulai.</p></div>
+        <div class="grid grid--4" id="owner-steps"></div>
+      </div>
+    </section>
+
+    <!-- Fitur dasbor -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section__head"><h2>Kendali Penuh di Tangan Anda</h2><p>Dasbor sederhana agar bapak/ibu pemilik leluasa mengelola kos kapan pun.</p></div>
+        <div class="grid grid--3" id="owner-features"></div>
+      </div>
+    </section>
+
+    <!-- FAQ pemilik -->
+    <section class="section">
+      <div class="container" style="max-width:820px">
+        <div class="section__head"><h2>Tanya Jawab Pemilik</h2><p>Hal yang perlu diketahui tentang kemitraan bebas biaya.</p></div>
+        <div class="accordion faq-list" id="owner-faq"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-banner">
+          <div><h2>Siap Menyambut Calon Penghuni Baru?</h2><p>Jangan biarkan kamar kos kosong berlama-lama. Promosikan gratis hari ini.</p></div>
+          <div class="cta-banner__actions">
+            <a class="btn btn--sun" href="#daftar"><span class="material-symbols-outlined">add_business</span>Daftar Jadi Mitra</a>
+            <a class="btn btn--wa" id="cta-wa" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">chat</span>Konsultasi via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="src/pages/pemilik.js"></script>
+</body>
+</html>

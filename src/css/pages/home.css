@@ -1,0 +1,104 @@
+/* home.css - halaman Beranda (index.html) */
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; padding-block: 64px 72px; background: var(--sky); border-bottom: 1px solid #2f5fb8; }
+.hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(64px); pointer-events: none; }
+.hero::before { top: -60px; right: -60px; width: 320px; height: 320px; background: rgba(255, 255, 255, 0.12); }
+.hero::after { bottom: -80px; left: -60px; width: 380px; height: 380px; background: rgba(47, 95, 184, 0.35); }
+.hero__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 7fr 5fr; gap: 40px; align-items: center; }
+.hero__badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 6px 16px; border-radius: 999px; background: #fff; color: var(--navy); font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
+.hero__badge .material-symbols-outlined { color: var(--sky); font-size: 18px; }
+.hero h1 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.75rem); }
+.hero h1 mark { padding: 2px 10px; border-radius: 12px; background: var(--sun); color: var(--sun-text); }
+.hero__sub { margin: 12px 0 28px; font-size: 1.1rem; font-weight: 500; color: #f0f6ff; }
+
+.search-bar { display: flex; align-items: center; gap: 8px; padding: 10px; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-lg); }
+.search-bar__field { flex: 1; display: flex; align-items: center; gap: 12px; padding-inline: 12px; }
+.search-bar__field .material-symbols-outlined { color: var(--sky); font-size: 24px; }
+.search-bar input { width: 100%; padding: 8px 0; border: 0; background: transparent; font-weight: 500; color: var(--navy); }
+.search-bar input:focus { outline: 0; }
+.search-bar--lg { border-radius: 999px; }
+
+.quick-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; }
+.quick-chips > span { font-size: 0.75rem; font-weight: 600; color: rgba(255, 255, 255, 0.9); }
+.quick-chips a { padding: 6px 14px; border-radius: 999px; background: #fff; color: var(--navy); font-size: 0.75rem; font-weight: 700; transition: transform 0.15s; }
+.quick-chips a:hover { transform: scale(1.05); }
+
+/* ---------- Maskot Si Kosty ---------- */
+.kosty { display: flex; flex-direction: column; align-items: center; max-width: 420px; margin-inline: auto; }
+.kosty__bubble { position: relative; width: 100%; max-width: 360px; margin-bottom: 14px; padding: 14px 18px; border-radius: var(--radius); background: #fff; color: var(--navy); box-shadow: var(--shadow-lg); animation: pop 0.3s ease-out; }
+.kosty__bubble::after { content: ''; position: absolute; bottom: -7px; left: 50%; width: 14px; height: 14px; background: #fff; transform: translateX(-50%) rotate(45deg); }
+.kosty__row { display: flex; align-items: flex-start; gap: 10px; }
+.kosty__row > span:first-child { font-size: 1.3rem; }
+.kosty__text { font-size: 0.85rem; font-weight: 600; line-height: 1.45; }
+.kosty__links { display: flex; gap: 8px; margin-top: 10px; }
+.kosty__links a { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; }
+.kosty__links a:first-child { background: #eef5ff; color: var(--putra); }
+.kosty__links a:last-child { background: #e8f8f0; color: var(--ok); }
+.kosty__close { margin: -4px -4px 0 0; padding: 2px; border: 0; background: transparent; color: var(--muted-2); }
+.kosty__stage { width: 100%; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-lg); background: rgba(255, 255, 255, 0.1); cursor: pointer; transition: background 0.2s; }
+.kosty__stage:hover { background: rgba(255, 255, 255, 0.16); }
+.kosty__svg { width: 100%; max-height: 280px; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.18)); animation: float 4.2s ease-in-out infinite; transform-origin: bottom center; }
+.kosty__svg.is-jumping { animation: wiggle 0.65s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.kosty__eye { transform-box: fill-box; transform-origin: center; animation: blink 4.5s ease-in-out infinite; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px) rotate(0.6deg); } }
+@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+@keyframes wiggle {
+  0% { transform: scale(1) translateY(0); }
+  20% { transform: scale(1.08, 0.92) translateY(-14px) rotate(-3deg); }
+  40% { transform: scale(0.95, 1.05) translateY(-2px) rotate(3deg); }
+  60% { transform: scale(1.03, 0.97) translateY(-6px) rotate(-1deg); }
+  100% { transform: scale(1) translateY(0); }
+}
+@keyframes pop { from { opacity: 0; transform: scale(0.85) translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Strip info ---------- */
+.stat-strip { padding-block: 32px; background: #fff; border-bottom: 1px solid var(--line); }
+.stat { display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.stat small { display: block; font-size: 0.75rem; font-weight: 600; }
+.stat strong { color: var(--navy); font-size: 1rem; }
+.stat--blue { background: #eef5ff; border-color: #dce9fc; }
+.stat--blue .icon-tile, .stat--blue small { color: var(--sky); }
+.stat--cream { background: #fff8e6; border-color: #ffebc2; }
+.stat--cream .icon-tile, .stat--cream small { color: #a87900; }
+.stat--mint { background: #ebfbf2; border-color: #cdf5dc; }
+.stat--mint .icon-tile, .stat--mint small { color: var(--ok); }
+.stat--sky { background: #f0f6ff; border-color: #dae8fc; }
+.stat--sky .icon-tile { color: #3dd68c; }
+.stat--sky small { color: var(--muted-2); }
+
+/* ---------- Kategori penghuni ---------- */
+.kategori { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; padding: 28px; border: 1px solid; border-radius: var(--radius-lg); box-shadow: var(--shadow); transition: box-shadow 0.2s; }
+.kategori:hover { box-shadow: var(--shadow-lg); }
+.kategori__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.kategori .icon-tile { width: 56px; height: 56px; }
+.kategori .icon-tile .material-symbols-outlined { font-size: 30px; }
+.kategori__count { padding: 4px 14px; border-radius: 999px; background: #fff; font-size: 0.75rem; font-weight: 700; }
+.kategori h3 { margin-bottom: 8px; font-size: 1.5rem; }
+.kategori p { font-size: 0.9rem; }
+.kategori .btn { background: #fff; border: 1px solid; }
+.kategori--putri { background: var(--putri-bg); border-color: #ffcadc; color: var(--putri); }
+.kategori--putra { background: var(--putra-bg); border-color: #c5ddff; color: var(--putra); }
+.kategori--campuran { background: var(--campuran-bg); border-color: #ddd0fa; color: var(--campuran); }
+.kategori p { color: var(--muted); }
+.kategori .btn:hover { background: currentColor; }
+.kategori--putri .btn:hover { background: var(--putri); color: #fff; }
+.kategori--putra .btn:hover { background: var(--putra); color: #fff; }
+.kategori--campuran .btn:hover { background: var(--campuran); color: #fff; }
+
+/* ---------- Langkah & keunggulan ---------- */
+.steps { position: relative; }
+.step { padding: 28px; border: 1px solid #d9e6fc; border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow); text-align: center; }
+.step__num { position: relative; width: 56px; height: 56px; margin: 0 auto 16px; display: grid; place-items: center; border-radius: 16px; background: var(--sky); color: #fff; font-size: 1.3rem; font-weight: 800; }
+.step__num i { position: absolute; top: -6px; right: -6px; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--sun); color: var(--sun-text); }
+.step__num i .material-symbols-outlined { font-size: 13px; }
+.step h3 { margin-bottom: 8px; }
+.step p { font-size: 0.9rem; }
+.why { padding: 24px; border: 1px solid; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.why .icon-tile { margin-bottom: 16px; }
+.why h3 { margin-bottom: 8px; }
+.why p { font-size: 0.85rem; }
+
+@media (max-width: 960px) { .hero__grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .search-bar { flex-direction: column; align-items: stretch; border-radius: var(--radius); } .search-bar .btn { width: 100%; } }

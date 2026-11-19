@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Kos di Madiun - KostKu Madiun</title>
+  <meta name="description" content="Cari dan bandingkan kos di Kota Madiun berdasarkan tipe penghuni, harga, dan fasilitas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/pages/home.css">
+  <link rel="stylesheet" href="src/css/pages/kos.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><span class="material-symbols-outlined">chevron_right</span><span class="is-current">Cari Kos</span>
+        </nav>
+        <h1>Daftar Kos di Madiun</h1>
+        <p style="margin-top:8px;max-width:640px">Temukan kos yang sesuai dengan anggaran, kenyamanan, dan kebutuhan studi atau kerjamu.</p>
+
+        <form class="search-bar search-bar--lg" id="search-form" style="margin-top:28px">
+          <label class="search-bar__field">
+            <span class="material-symbols-outlined">search</span>
+            <input type="search" id="search-input" placeholder="Cari nama kos, area kampus, jalan, atau fasilitas..." aria-label="Cari kos">
+          </label>
+          <button class="btn btn--sun" type="submit"><span class="material-symbols-outlined">search</span>Cari Kos</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="kos-layout">
+        <!-- Panel filter -->
+        <aside class="filter-panel" id="filter-panel" aria-label="Filter pencarian">
+          <div class="filter-panel__head">
+            <h2><span class="material-symbols-outlined">tune</span>Filter Pencarian</h2>
+            <button class="filter-panel__reset" type="button" id="filter-reset">Reset</button>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Jenis Penghuni</span>
+            <div class="pill-group" id="filter-tipe">
+              <label class="pill"><input type="radio" name="tipe" value="semua" checked><span>Semua</span></label>
+              <label class="pill pill--putri"><input type="radio" name="tipe" value="putri"><span>Putri</span></label>
+              <label class="pill pill--putra"><input type="radio" name="tipe" value="putra"><span>Putra</span></label>
+              <label class="pill pill--campuran"><input type="radio" name="tipe" value="campuran"><span>Campuran</span></label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Lama Menginap</span>
+            <div class="segmented" id="filter-periode">
+              <button class="segmented__btn" type="button" data-periode="harian">Harian</button>
+              <button class="segmented__btn is-active" type="button" data-periode="bulanan">Bulanan</button>
+              <button class="segmented__btn" type="button" data-periode="tahunan">Tahunan</button>
+            </div>
+            <p class="hint">Harga di kartu mengikuti pilihan periode sewa</p>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Rentang Harga Bulanan (Rp)</span>
+            <div class="price-range">
+              <label><small>Minimum</small><input class="input" id="filter-min" inputmode="numeric" placeholder="500.000"></label>
+              <label><small>Maksimum</small><input class="input" id="filter-max" inputmode="numeric" placeholder="1.500.000"></label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Fasilitas</span>
+            <div class="stack" id="filter-fasilitas"></div>
+          </div>
+
+          <label class="filter-toggle">
+            <span>Hanya yang masih ada kamar</span>
+            <span class="switch"><input type="checkbox" id="filter-tersedia"><i></i></span>
+          </label>
+        </aside>
+
+        <!-- Hasil -->
+        <section class="results" aria-live="polite">
+          <div class="results__bar">
+            <div>
+              <button class="btn btn--ghost btn--sm filter-toggle-mobile" id="filter-open" type="button" style="margin-right:10px"><span class="material-symbols-outlined">tune</span>Filter</button>
+              <strong id="results-count">0 kos ditemukan</strong>
+              <span style="font-size:.75rem"> di sekitar Kota Madiun</span>
+            </div>
+            <label class="sort">Urutkan:
+              <select id="sort-select">
+                <option value="rekomendasi">Rekomendasi</option>
+                <option value="harga_asc">Harga Terendah</option>
+                <option value="harga_desc">Harga Tertinggi</option>
+                <option value="kamar_desc">Sisa Kamar Terbanyak</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="results__grid" id="results-grid"></div>
+
+          <div class="help-banner">
+            <div>
+              <div class="icon-tile"><span class="material-symbols-outlined">support_agent</span></div>
+              <div>
+                <h3>Belum menemukan kos yang cocok?</h3>
+                <p>Tim KostKu Madiun siap membantumu mencarikan rekomendasi kos terdekat kampus atau kantor via WhatsApp gratis tanpa komisi.</p>
+              </div>
+            </div>
+            <a class="btn btn--wa" id="help-wa" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">chat</span>Tanya Rekomendasi via WhatsApp</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="src/pages/kos.js"></script>
+</body>
+</html>

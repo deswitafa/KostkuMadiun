@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ - KostKu Madiun</title>
+  <meta name="description" content="Jawaban pertanyaan umum seputar mencari kos, pemesanan, aturan penghuni, dan pendaftaran kos di Madiun.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/pages/home.css">
+  <link rel="stylesheet" href="src/css/pages/info.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a><span class="material-symbols-outlined">chevron_right</span><span class="is-current">FAQ</span>
+        </nav>
+        <h1>Pertanyaan yang Sering Diajukan</h1>
+        <p style="margin-top:8px;max-width:640px">Temukan jawaban cepat seputar mencari kos, pemesanan, aturan penghuni, dan pendaftaran kos.</p>
+
+        <div class="faq-tools">
+          <label class="search-bar search-bar--lg" style="max-width:640px">
+            <span class="search-bar__field">
+              <span class="material-symbols-outlined">search</span>
+              <input type="search" id="faq-search" placeholder="Cari pertanyaan, mis. pembayaran atau foto" aria-label="Cari pertanyaan">
+            </span>
+          </label>
+          <div class="faq-tabs" id="faq-tabs" role="tablist" aria-label="Kategori FAQ"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container faq-layout">
+        <div>
+          <div class="accordion faq-list" id="faq-list"></div>
+          <div class="faq-empty" id="faq-empty" hidden>
+            <span class="material-symbols-outlined" style="font-size:44px;color:var(--sky)">search_off</span>
+            <h3>Pertanyaan tidak ditemukan</h3>
+            <p>Coba kata kunci lain, atau tanyakan langsung ke admin lewat WhatsApp.</p>
+          </div>
+        </div>
+
+        <aside class="faq-aside">
+          <div class="card card--mint contact-card">
+            <div class="icon-tile"><span class="material-symbols-outlined">support_agent</span></div>
+            <h3>Masih ada pertanyaan?</h3>
+            <p>Admin KostKu Madiun siap membantu lewat WhatsApp, gratis tanpa komisi.</p>
+            <a class="btn btn--wa btn--block" id="faq-wa" href="#" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">chat</span>Tanya Admin</a>
+          </div>
+          <div class="card card--cream contact-card">
+            <h3>Tips Aman Memilih Kos</h3>
+            <ul class="note-list">
+              <li>Survei langsung sebelum membayar apa pun.</li>
+              <li>Pastikan harga, fasilitas, dan aturan jelas sejak awal.</li>
+              <li>Simpan bukti pembayaran dari pemilik.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="src/pages/faq.js"></script>
+</body>
+</html>
